@@ -1,0 +1,44 @@
+# Translation of Themes - Appointment Blue in Italian
+# This file is distributed under the same license as the Themes - Appointment Blue package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-02-13 10:15:43+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.3.0-alpha\n"
+"Language: it\n"
+"Project-Id-Version: Themes - Appointment Blue\n"
+
+#. Description of the plugin/theme
+msgid "A Business theme which is ideal for creating a corporate / business website. Appointment Blue theme is a child theme of appointment theme and it is the Blue color variation. Those who need the white background based theme they can use this child theme. Appointment Blue theme comes with various locales."
+msgstr "Si tratta di un tema aziendale che è perfetto per la creazione di siti web aziendali / commerciali. Appointment Blue è il tema figlio nella variante di colore blu del tema Appointment. Quelli che necessitano di un tema con sfondo bianco possono utilizzare questo tema figlio. Il tema Appointment Blue è disponibile in varie lingue."
+
+#. Theme Name of the plugin/theme
+msgid "Appointment Blue"
+msgstr "Appointment Blue"
+
+#: header.php:50
+msgid "Toggle navigation"
+msgstr "Attiva/Disattiva menu di navigazione"
+
+#. Template Name of the plugin/theme
+msgid "Blog-right-sidebar"
+msgstr "Blog-right-sidebar"
+
+#. Template Name of the plugin/theme
+msgid "Blog-left-sidebar"
+msgstr "Blog-left-sidebar"
+
+#. Theme URI of the plugin/theme
+msgid "http://webriti.com/appointment-blue-child-version-details-page-1/"
+msgstr "http://webriti.com/appointment-blue-child-version-details-page-1/"
+
+#. Author URI of the plugin/theme
+msgid "http://www.webriti.com"
+msgstr "http://www.webriti.com"
+
+#. Author of the plugin/theme
+msgid "webriti"
+msgstr "webriti"

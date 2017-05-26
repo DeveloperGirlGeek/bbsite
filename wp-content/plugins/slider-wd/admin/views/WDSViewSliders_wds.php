@@ -2464,15 +2464,15 @@ class WDSViewSliders_wds {
                                     </tr>
                                     <tr class="wds_layer_tr">
                                       <td class="spider_label">
-                                        <label for="<?php echo $prefix; ?>_size">Size: </label>
+                                        <label for="<?php echo $prefix; ?>_size"><?php _e('Size:', 'wds'); ?> </label>
                                       </td>
                                       <td>
                                         <span style="display: table-cell">
                                           <input id="<?php echo $prefix; ?>_size" class="spider_int_input" type="text" onchange="jQuery('#<?php echo $prefix; ?>').css({fontSize: jQuery(this).val() + 'px', lineHeight: jQuery(this).val() + 'px'})" onkeypress="return spider_check_isnum(event)" value="<?php echo $layer->size; ?>" name="<?php echo $prefix; ?>_size" /> px 
                                         </span>
                                         <span style="display: table-cell;">  
-                                          <input id="<?php echo $prefix; ?>_min_size" class="spider_int_input" type="text"  onkeypress="return spider_check_isnum(event)" value="<?php echo $layer->min_size; ?>" name="<?php echo $prefix; ?>_min_size" /> px
-                                          <div class="spider_description">Minimum size</div>
+                                          <input id="<?php echo $prefix; ?>_min_size" class="spider_int_input" type="text" onchange="wds_min_size_validation('<?php echo $prefix; ?>')" onkeypress="return spider_check_isnum(event)" value="<?php echo $layer->min_size; ?>" name="<?php echo $prefix; ?>_min_size" /> px
+                                          <div class="spider_description"><?php _e('Minimal size must be less than the actual size.', 'wds'); ?></div>
                                         </span>
                                       </td>                            
                                     </tr>

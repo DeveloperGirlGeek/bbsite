@@ -4,7 +4,7 @@ Donate link: https://web-dorado.com/products/wordpress-slider-plugin.html
 Tags: responsive slider, slider, slideshow, wordpress slider, image slider, gallery slider, images slider, Photo Slider, post slider,  slider plugin
 Requires at least: 3.4
 Tested up to: 4.7
-Stable tag: 1.1.78
+Stable tag: 1.1.81
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -129,6 +129,16 @@ After downloading the ZIP file of the slider plugin,
 
 == Changelog ==
 
+= 1.1.81 =
+* Fixed: Uninstall. 
+* Fixed: Youtube video autoplay in some case.   
+
+= 1.1.80 =
+* Fixed: Slider direction with two slides.    
+
+= 1.1.79 =
+* Changed: Minimum font size validation.   
+  
 = 1.1.78 =
 * Added: Apply layer global options to existing layers.   
 * Changed: Removed support forum link.   

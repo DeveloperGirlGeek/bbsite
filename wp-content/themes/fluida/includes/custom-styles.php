@@ -504,14 +504,14 @@ for ($i=1; $i<=8; $i++) { ?>
 	.lpbox-rnd<?php echo $i ?> { background-color:  <?php echo esc_html( cryout_hexdiff( $fluida_contentbackground, 50+5*$i ) ) ?>; }
 <?php }
 
-	return  ob_get_clean();
+	return apply_filters( 'fluida_custom_styles', ob_get_clean() );
 } // fluida_custom_styles()
 
 
 /*
  * Dynamic styles for the admin MCE Editor
  */
-function fluida_custom_editor_styles() {
+function fluida_editor_styles() {
 	header( 'Content-type: text/css' );
 	$fluids = cryout_get_option();
 	foreach ( $fluids as $key => $value ) { ${"$key"} = $value; }
@@ -570,10 +570,8 @@ for ( $i=1; $i <= 6; $i++ ) {
 .mce-content-body p { text-indent: <?php echo esc_html( $fluida_parindent ) ?>;}
 
 <?php // end </style>
-	$fluida_custom_styling = ob_get_contents();
-	ob_end_clean();
-	echo $fluida_custom_styling;
-} // fluida_custom_editor_styles()
+	echo apply_filters( 'fluida_editor_styles', ob_get_clean() );
+} // fluida_editor_styles()
 
 
 /* FIN */

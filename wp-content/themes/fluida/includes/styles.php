@@ -173,8 +173,8 @@ function fluida_add_editor_styles() {
 	if ( ! $editorstyles ) return;
 
 	add_editor_style( add_query_arg( 'action', 'fluida_editor_styles', admin_url( 'admin-ajax.php' ) ) );
-	add_action( 'wp_ajax_fluida_editor_styles', 'fluida_custom_editor_styles' );
-	add_action( 'wp_ajax_no_priv_fluida_editor_styles', 'fluida_custom_editor_styles' );
+	add_action( 'wp_ajax_fluida_editor_styles', 'fluida_editor_styles' );
+	add_action( 'wp_ajax_no_priv_fluida_editor_styles', 'fluida_editor_styles' );
 }//fluida_add_editor_styles
 fluida_add_editor_styles();
 /* FIN */

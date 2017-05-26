@@ -17,6 +17,7 @@ require_once( get_template_directory() . "/includes/tgmpa.php" );
 require_once( get_template_directory() . "/includes/custom-styles.php" );
 
 // Get the theme options and make sure defaults are used if no values are set
+if (!function_exists('fluida_get_theme_options')):
 function fluida_get_theme_options() {
 	$optionsFluida = wp_parse_args(
 		get_option( 'fluida_settings', array() ),
@@ -24,11 +25,14 @@ function fluida_get_theme_options() {
 	);
 	return apply_filters( 'fluida_theme_options_array', $optionsFluida );
 } // fluida_get_theme_options()
+endif;
 
+if (!function_exists('fluida_get_theme_structure')):
 function fluida_get_theme_structure() {
 	global $fluida_big;
 	return apply_filters( 'fluida_theme_structure_array', $fluida_big );
 } // fluida_get_theme_structure()
+endif;
 
 // load up theme options
 $cryout_theme_settings = apply_filters( 'fluida_theme_structure_array', $fluida_big );

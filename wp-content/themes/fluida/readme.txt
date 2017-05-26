@@ -6,7 +6,7 @@ https://www.cryoutcreations.eu/
 Author: Cryout Creations
 Requires at least: 4.2
 Tested up to: 4.7.4
-Stable tag: 1.3.2
+Stable tag: 1.3.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Donate link: https://www.cryoutcreations.eu/donate/
@@ -73,6 +73,11 @@ The rest of the bundled images are created by Cryout Creations and released with
 
 == Changelog ==
 
+= 1.3.3 = 
+* Added styling to disable Chrome's built-in blue border on focused form elements
+* Added explicit support for WooCommerce 3.0 new product gallery
+* Removed 'wp_calculate_image_srcset' filter support due to Jetpack_Photon::filter_srcset_array() issue
+
 = 1.3.2 =
 * Changed post titles in posts lists from 60 units smaller to 75%
 * Improved srcset functionality by switching to viewpoint units for better responsiveness
@@ -81,6 +86,7 @@ The rest of the bundled images are created by Cryout Creations and released with
 * Fixed srcset sizes for 1 column posts list layout
 * Added 'fluida_featured_srcset' filter and support for 'wp_calculate_image_srcset' filter for disabling srcset functionality 
 * Fixed renaming .mobile class
+* Changed default value for Featured Image Alignment from center/center to center/top
 * Updated Cryout Framework to v0.6.5 
 
 = 1.3.1.1 =

@@ -55,7 +55,7 @@ function fluida_setup() {
 		'footer'  => __( 'Footer Navigation', 'fluida' ),
 		'socials' => __( 'Social Icons', 'fluida' ),
 	) );
-	
+
 	$falign = explode( ' ', $fluids['fluida_falign'] );
 	if (!is_array($falign)) $falign = array( 'center', 'center' ); //failsafe
 
@@ -146,6 +146,9 @@ function fluida_setup() {
 
 	// WooCommerce compatibility
 	add_theme_support( 'woocommerce' );
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
 
 } // fluida_setup()
 

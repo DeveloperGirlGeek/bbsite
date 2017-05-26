@@ -4,7 +4,7 @@
  * Plugin Name: Slider WD
  * Plugin URI: https://web-dorado.com/products/wordpress-slider-plugin.html
  * Description: This is a responsive plugin, which allows adding sliders to your posts/pages and to custom location. It uses large number of transition effects and supports various types of layers.
- * Version: 1.1.78
+ * Version: 1.1.81
  * Author: WebDorado
  * Author URI: https://web-dorado.com/
  * License: GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
@@ -14,7 +14,7 @@ define('WD_S_NAME', plugin_basename(dirname(__FILE__)));
 define('WD_S_DIR', WP_PLUGIN_DIR . "/" . WD_S_NAME);
 define('WD_S_URL', plugins_url(WD_S_NAME));
 
-define('WD_S_VERSION', '1.1.78');
+define('WD_S_VERSION', '1.1.81');
 
 function wds_use_home_url() {
   $home_url = str_replace("http://", "", home_url());
@@ -456,7 +456,8 @@ function wds_install() {
     add_option("wds_version_1.0.46", 1, '', 'no');
   }
 }
-if (!isset($_GET['action']) || $_GET['action'] != 'deactivate') {
+if ((!isset($_GET['action']) || $_GET['action'] != 'deactivate')
+  && (!isset($_GET['page']) || $_GET['page'] != 'uninstall_wds')) {
   add_action('admin_init', 'wds_install');
 }
 
@@ -523,6 +524,8 @@ function wds_scripts() {
     "GGF" => WDW_S_Library::get_google_fonts(),
     "FGF" => WDW_S_Library::get_font_families(),
     "LDO" => $global_options,
+    'min_size' => __('Minimal size must be less than the actual size.', 'wds'),
+    'font_size' => __('Size:', 'wds'),
   ));
 
   wp_enqueue_script('wds-deactivate-popup', WD_S_URL.'/wd/assets/js/deactivate_popup.js', array(), WD_S_VERSION, true );

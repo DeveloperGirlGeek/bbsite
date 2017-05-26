@@ -2194,14 +2194,14 @@ function wds_add_layer(type, id, layerID, duplicate, files, edit) {
                '<td><input type="text" name="' + prefix + '_color" id="' + prefix + '_color" value="" class="color" onchange="jQuery(\'#' + prefix + '\').css({color: \'#\' + jQuery(this).val()})" /><div class="spider_description"></div></td>';
   var hover_color_text = '<td class="spider_label"><label for="' + prefix + '_hover_color_text">Hover Color: </label></td>' +
                     '<td><input type="text" name="' + prefix + '_hover_color_text" id="' + prefix + '_hover_color_text" value="" class="color" onchange="jQuery(\'#' + prefix + '\').hover(function() { jQuery(this).css({color: \'#\' + jQuery(\'#' + prefix + '_hover_color_text\').val()}); }, function() { jQuery(this).css({color: \'#\' + jQuery(\'#' + prefix + '_color\').val()}); })" /><div class="spider_description"></div></td>';             
-  var size = '<td class="spider_label"><label for="' + prefix + '_size">Size: </label></td>' +
+  var size = '<td class="spider_label"><label for="' + prefix + '_size">' + wds_object.font_size + ' </label></td>' +
               '<td>' +
                 '<span style="display:table-cell;">' +
                   '<input type="text" name="' + prefix + '_size" id="' + prefix + '_size" value="18" class="spider_int_input" onkeypress="return spider_check_isnum(event)" onchange="jQuery(\'#' + prefix + '\').css({fontSize: jQuery(this).val() + \'px\', lineHeight: jQuery(this).val() + \'px\'})" /> px' +
                 '</span>' +
                 '<span style="display:table-cell;">' +
-                  '<input type="text" name="' + prefix + '_min_size" id="' + prefix + '_min_size" value="11" class="spider_int_input" onkeypress="return spider_check_isnum(event)"/> px' +
-                  '<div class="spider_description">Minimum size</div>' +
+                  '<input type="text" name="' + prefix + '_min_size" id="' + prefix + '_min_size" value="11" class="spider_int_input" onchange="wds_min_size_validation(\'' + prefix + '\')" onkeypress="return spider_check_isnum(event)"/> px' +
+                  '<div class="spider_description">' + wds_object.min_size + '</div>' +
                 '</span>' +
               '</td>';
   var ffamily = '<td class="spider_label"><label for="' + prefix + '_ffamily">Font family: </label></td>' +
@@ -3135,5 +3135,18 @@ function wds_tooltip() {
         }
       });
     }
+  }
+}
+
+function wds_min_size_validation(that) {
+  var cont = jQuery("#" + that + "_min_size");
+  var min_size = parseInt(cont.val());
+  var size = parseInt(jQuery("#" + that + "_size").val());
+  if (min_size > size) {
+    cont.val(0);
+    cont.css({'borderColor': 'rgb(255, 0, 0)'});
+  }
+  else {
+    cont.removeAttr('style');
   }
 }

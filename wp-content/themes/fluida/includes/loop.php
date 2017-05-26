@@ -242,8 +242,8 @@ function fluida_set_featured_thumb() {
 		case 2: $featured = 'fluida-featured-half'; break;
 		case 1: default: $featured = 'fluida-featured'; break;		
 	};
-	// support WordPress' filter to disable srcset if so desired
-	$use_srcset = apply_filters( 'fluida_featured_srcset', true ) && apply_filters( 'wp_calculate_image_srcset', true );
+	// filter to disable srcset if so desired
+	$use_srcset = apply_filters( 'fluida_featured_srcset', true );
 
 	if ( function_exists('has_post_thumbnail') && has_post_thumbnail() && $fluids['fluida_fpost']) {
 		// has featured image

@@ -1507,7 +1507,7 @@ class WDSViewSlider {
             return;
           }
           if (btn == "") {
-            var direction = 'right';
+            var direction = "right";
             var int_curr_key = parseInt(wds_current_key_<?php echo $wds; ?>);
             var int_key = parseInt(key);
             var last_pos = wds_data_<?php echo $wds; ?>.length - 1;
@@ -1517,14 +1517,18 @@ class WDSViewSlider {
             else if (int_curr_key == int_key) {
               return;
             }
+            /* From last slide to first.*/
             if (int_key == 0) {
               if (int_curr_key == last_pos) {
                 direction = 'right';
               }
             }
+            /* From first slide to last if there are more than two slides in the slider.*/
             if (int_key == last_pos) {
               if (int_curr_key == 0) {
-                direction = 'left';
+                if (last_pos > 1) {
+                  direction = 'left';
+                }
               }
             }
           }
@@ -1533,13 +1537,8 @@ class WDSViewSlider {
           }
           if (<?php echo $enable_slideshow_autoplay; ?>) {
             if (<?php echo $twoway_slideshow; ?>) {
-              if (direction == "left") {
-                 wds_global_btn_<?php echo $wds; ?> = "left";
-               }
-              else if (direction == "right") {
-                 wds_global_btn_<?php echo $wds; ?> = "right";
-              }
-				    }
+              wds_global_btn_<?php echo $wds; ?> = direction;
+            }
           }
           /* Set active thumbnail position.*/
           wds_current_filmstrip_pos_<?php echo $wds; ?> = key * (jQuery(".wds_slideshow_filmstrip_thumbnail_<?php echo $wds; ?>").<?php echo $width_or_height; ?>() + 2 + 2 * 0);
